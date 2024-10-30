@@ -8,10 +8,8 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
 
   useEffect(() => {
-    const authStatus = JSON.parse(localStorage.getItem('is_authenticated'));
-    setIsAuthenticated(Boolean(authStatus));
+    setIsAuthenticated(JSON.parse(localStorage.getItem('is_authenticated')));
   }, []);
-
   return (
     <>
       {isAuthenticated ? (
